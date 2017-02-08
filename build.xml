@@ -13,6 +13,7 @@
     <target name="init">
         <mkdir dir="bin"/>
     </target>
+	<target name="test" depends="init"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" >
