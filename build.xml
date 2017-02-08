@@ -16,6 +16,13 @@
     <target name="clean">
         <delete dir="bin"/>
     </target>
+	<target name="unittest">
+			<junit haltonfailure="true" printsummary="true">
+				<test>
+				  <echo message="Hello Test"/>
+				</test>
+			</junit>
+    </target>
     <target depends="build-project" name="build"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
