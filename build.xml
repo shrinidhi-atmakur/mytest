@@ -19,21 +19,19 @@
             </fileset>
         </copy>
     </target>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
+    <target depends="build-project" name="build"/>
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
             <src path="src"/>
             <classpath refid="Travis1.classpath"/>
         </javac>
+    	
+    	 <echo message="Inside running Java"/>
+    	<java classname="mysrc.MyDateTime" failonerror="true" fork="yes">
+    	            <classpath refid="Travis1.classpath"/>
+    	</java>
     </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" depends="build" />
-    <target name="MyDateTime">
-	    <echo message="Inside running Java"/>
-        <java classname="mysrc.MyDateTime" failonerror="true" fork="yes">
-            <classpath refid="Travis1.classpath"/>
-        </java>
-    </target>
-	<target name="test" depends="build-refprojects" />
+    
+	<target name="test" depends="build-project" />
 </project>
