@@ -10,3 +10,5 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
+env:
+  - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest/bin"
