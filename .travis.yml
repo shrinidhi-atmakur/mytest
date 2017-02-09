@@ -16,6 +16,6 @@ env:
 deploy:
   edge: true
   provider: script
-  script: scripts/deploy.sh
+  script: scripts/TestScript.sh
   on:
     branch: master 
