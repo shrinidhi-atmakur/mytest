@@ -3,11 +3,13 @@ sudo: required
 jdk:
   - oraclejdk7
 deploy:
-  edge: true
-  provider: script
-  script: scripts/TestScript.sh
+  provider: releases
+  user: "shrinidhi-atmakur"
+  password: "asdfgh12"
+  file: "MyDateTime.class"
+  skip_cleanup: true
   on:
-    branch: master 
+    tags: true
 env:
-  - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest"
+  - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest/bin/mysrc"
   
