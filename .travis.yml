@@ -2,3 +2,11 @@ language: java
 sudo: required
 jdk:
   - oraclejdk7
+deploy:
+  provider: releases
+  user: "shrinidhi-atmakur"
+  password: "asdfgh12"
+  file: "MyDateTime.class"
+  skip_cleanup: true
+  on:
+    tags: true
