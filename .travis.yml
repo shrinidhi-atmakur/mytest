@@ -4,11 +4,11 @@ jdk:
   - oraclejdk7
 deploy:
   provider: releases
-  user: "shrinidhi-atmakur"
-  password: "asdfgh12"
-  file: "MyDateTime.class"
+  api_key: ${api_key}
+  file: "bin/mysrc/MyDateTime.class"
   skip_cleanup: true
   on:
+    all_branches: true
     tags: true
 env:
   - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest/bin/mysrc"
