@@ -38,5 +38,5 @@
             <classpath refid="Travis1.classpath"/>
         </java>
     </target>
-	<target name="test"/>
+	<target name="test"  depends="build"/>
 </project>
