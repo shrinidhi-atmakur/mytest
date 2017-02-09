@@ -32,11 +32,11 @@
             <classpath refid="Travis1.classpath"/>
         </javac>
     </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" depends="build" />
     <target name="MyDateTime">
         <java classname="mysrc.MyDateTime" failonerror="true" fork="yes">
             <classpath refid="Travis1.classpath"/>
         </java>
     </target>
-	<target name="test"  depends="build"/>
+	<target name="test" depends="build-refprojects" />
 </project>
