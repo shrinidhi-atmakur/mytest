@@ -11,4 +11,11 @@ deploy:
   on:
     tags: true
 env:
-  - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest/bin"
+  - TRAVIS_BUILD_DIR="/home/travis/build/shrinidhi-atmakur/mytest"
+  
+deploy:
+  edge: true
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master 
