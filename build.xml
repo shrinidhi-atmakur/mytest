@@ -19,10 +19,6 @@
             </fileset>
         </copy>
     </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
     <target depends="build-subprojects,build-project" name="build"/>
     <target name="build-subprojects"/>
     <target depends="init" name="build-project">
@@ -34,6 +30,7 @@
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects" depends="build" />
     <target name="MyDateTime">
+	    <echo message="Inside running Java"/>
         <java classname="mysrc.MyDateTime" failonerror="true" fork="yes">
             <classpath refid="Travis1.classpath"/>
         </java>
